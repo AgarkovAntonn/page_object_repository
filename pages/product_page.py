@@ -26,10 +26,10 @@ class ProductPage(BasePage):
         #time.sleep(3)
         product_name_in_cart = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_CART).text
         product_price_in_cart = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_IN_CART).text
-        print('Product name - ', product_name)
-        print('Product price - ', product_price)
-        print('Product name in cart - ', product_name_in_cart)
-        print('Product price in cart - ', product_price_in_cart)
+        # ~ print('Product name - ', product_name)
+        # ~ print('Product price - ', product_price)
+        # ~ print('Product name in cart - ', product_name_in_cart)
+        # ~ print('Product price in cart - ', product_price_in_cart)
         
         assert (product_name == product_name_in_cart), "Wrong product's name in cart"
         assert (product_price == product_price_in_cart), "Wrong product's price in cart"
