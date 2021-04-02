@@ -24,3 +24,17 @@ class LoginPage(BasePage):
         # реализуйте проверку, что есть форма регистрации на странице
         register_form = self.is_element_present(*LoginPageLocators.REGISTER_FORM)
         assert register_form, "There is no RegisterForm on page"
+
+    def register_new_user(self, email, password):
+        try:
+            registration_email = self.browser.find_element(*LoginPageLocators.REGISTRATION_EMAIL)
+            registration_password1 = self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD1)
+            registration_password2 = self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD2)
+            register_button = self.browser.find_element(*LoginPageLocators.REGISTER_BUTTON)
+        except NoSuchElementException:
+            print("There is no one of registration fields or button")
+        registration_email.send_keys(email)
+        registration_password1.send_keys(password)
+        registration_password2.send_keys(password)
+        register_button.click()
+

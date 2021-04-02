@@ -54,6 +54,9 @@ class BasePage():
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented, probably unauthorised user"
+
     def solve_quiz_and_get_code(self):
         try:
             alert = self.browser.switch_to.alert
@@ -64,7 +67,6 @@ class BasePage():
         except NoAlertPresentException:
             print("No first alert presented")
         try:
-            #WebDriverWait(self.browser, 10).until(EC.alert_is_present())
             alert = self.browser.switch_to.alert
             alert_text = alert.text
             print(f"Your code: {alert_text}")
@@ -76,4 +78,3 @@ class BasePage():
         view_basket_button = self.browser.find_element(*BasePageLocators.VIEW_BASKET_BUTTON)
         view_basket_button.click()
         assert 'basket' in self.browser.current_url, "There is no basket page when click view basket button from main page"
-
