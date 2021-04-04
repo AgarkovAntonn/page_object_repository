@@ -6,8 +6,6 @@ class BasePageLocators():
     VIEW_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-group > a:nth-child(1)")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
-    ##default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a
-
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
@@ -29,6 +27,5 @@ class ProductPageLocators():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "div.alert-success:nth-child(1) > div.alertinner")
 
 class BasketPageLocators():
-    PROCEED_TO_CHECKOUT_BUTTON = (By.CSS_SELECTOR, ".col-sm-4.col-sm-offset-8")
     EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p:nth-child(1)")
     PRODUCTS_IN_BASKET_TITLE = (By.CSS_SELECTOR, ".basket-title")
